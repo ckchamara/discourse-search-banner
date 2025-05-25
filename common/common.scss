@@ -27,7 +27,7 @@
 }
 
 .search-banner {
-  background-image: var(--custom-bg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(32, 35, 38)), url("https://forum.godotengine.org/uploads/default/original/2X/9/95b97a6d47e973593b19528cc08f561c49b6543f.svg");
 
   @if $tile-background_image == "true" {
     background-size: auto;

@@ -1,6 +1,6 @@
 en:
   search_banner:
-    headline: "Welcome to the <span style='position: relative;'>Unistudent<img src='https://discourse.org/a/img/highlight.png' style='position: absolute; bottom: -5px; left: 0; width: 100%; height: 8px; z-index: -1;'></span> community"
+    headline: "Welcome to the <span style='position: relative;'>Unistudent<img src='https://discourse.org/a/img/highlight.png' style='position: absolute; bottom: -5px; left: 0; width: 100%; height: 8px; z-index: -1;'></span> community!"
     subhead: "We're happy to have you here. If you need help, please search before you post."
     search_button_text: ""
   theme_metadata:

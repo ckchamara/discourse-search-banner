@@ -47,7 +47,7 @@
     }
 
     + .search-menu-container .search-input {
-      border: 1px solid #a3c9ff !important;
+      border: 1px solid #3164ac !important;
       padding-left: 1.75em;
       border-radius: 0.5em;
       overflow: hidden;
@@ -65,6 +65,18 @@
 
   h1 {
     text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: var(--font-up-6);
+    line-height: 1.3;
+    transform: scaleX(1.16); /* Stretch the text horizontally on desktop */
+    transform-origin: center; /* Ensure it stretches from the center */
+    font-weight: 600; /* Adjust weight as needed */
+    
+    @include viewport.until(sm) {
+      transform: scaleX(1.05); /* Less stretching on mobile */
+      font-size: var(--font-up-4); /* Smaller font size on mobile */
+    }
   }
 
   .btn.search-icon.has-search-button-text {
@@ -88,6 +100,15 @@
 
 .custom-search-banner-wrap {
   padding: 1em var(--d-wrap-padding-h) 1.25em;
+
+  h1 {
+    margin-bottom: 0.1em;
+    padding-top: 0.5em;
+  }
+
+  p {
+    margin-top: 0;
+  }
 
   @include viewport.from(sm) {
     padding: 2.5em var(--d-wrap-padding-h) 3em;

@@ -15,6 +15,8 @@
   --search-banner-special-padding: 1em;
   --search-banner-special-top-position: 3.45em;
   --search-banner-special-search-top: 0.45em;
+  --search-banner-min-height: 30vh;  // this will be overridden by the responsive styles below
+  --search-banner-gradient-color: rgb(32, 35, 38);
 }
 
 // these are add-on styles controlled by settings
@@ -27,13 +29,35 @@
 }
 
 .search-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgb(32, 35, 38)), url("https://forum.godotengine.org/uploads/default/original/2X/9/95b97a6d47e973593b19528cc08f561c49b6543f.svg");
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0) 30%,
+    var(--search-banner-gradient-color)
+  ), url("https://forum.godotengine.org/uploads/default/original/2X/9/95b97a6d47e973593b19528cc08f561c49b6543f.svg");
+  min-height: var(--search-banner-min-height);
+  position: relative;
+  z-index: 1;
 
   @if $tile-background_image == "true" {
     background-size: auto;
   } @else {
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  // For screens smaller than 768px (phones)
+  @include viewport.until(sm) {
+    --search-banner-min-height: 40vh;
+  }
+
+  // For screens 768px and larger (tablets and desktops)
+  @include viewport.from(sm) {
+    --search-banner-min-height: 30vh;
   }
 }
 
@@ -162,4 +186,7 @@
 
 #main-outlet {
   margin-top: 0;
+  position: relative;
+  z-index: 2;
+  background: var(--secondary);
 }
